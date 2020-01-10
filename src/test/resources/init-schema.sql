@@ -9,7 +9,8 @@ CREATE TABLE `question`
     `comment_count` INT          NOT NULL,
     PRIMARY KEY (`id`),
     INDEX `date_index` (`created_date` ASC)
-);
+)
+DEFAULT CHARSET = utf8;
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`
@@ -76,8 +77,8 @@ CREATE TABLE `feed`
     `id`           INT      NOT NULL AUTO_INCREMENT,
     `created_date` DATETIME NULL,
     `user_id`      INT      NULL,
-    `data_feed`         TINYTEXT NULL,
-    `type_feed`         INT      NULL,
+    `data_feed`    TINYTEXT NULL,
+    `type_feed`    INT      NULL,
     PRIMARY KEY (`id`),
     INDEX `user_index` (`user_id` ASC)
 )
